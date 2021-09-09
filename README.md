@@ -1,4 +1,4 @@
-### [Heroku server with Frontend](#)
+### [Heroku server with Frontend](https://ahj-11-2-posts-with-comments.herokuapp.com/)
 
 # 11. Домашнее задание к лекции «RxJS»
 
@@ -13,7 +13,7 @@
 
 ---
 
-## 11.2 Posts with comments (Frontend, [Backend](https://github.com/MKSInc/AHJ-hw.-11-RxJs.-2-Posts-with-comments.-Backend))
+## 11.2 Posts with comments* (задача со звёздочкой) (Frontend, [Backend](https://github.com/MKSInc/AHJ-hw.-11-RxJs.-2-Posts-with-comments.-Backend))
 Важно: эта задача не является обязательной. Её (не)выполнение не влияет на получение зачёта по ДЗ.
 
 ### Легенда
