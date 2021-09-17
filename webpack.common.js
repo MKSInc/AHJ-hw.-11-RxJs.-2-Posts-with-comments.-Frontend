@@ -5,44 +5,44 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // Хеширование файлов только в production mode
 function addHash(fileName, buildMode, hash = 'contenthash') {
-  return buildMode === 'production' ? fileName.replace(/\.[^.]+$/, `.[${hash}]$&`) : fileName;
+	return buildMode === 'production' ? fileName.replace(/\.[^.]+$/, `.[${hash}]$&`) : fileName;
 }
 
 module.exports = (buildMode) => ({
-  entry: './src/index.js',
-  output: {
-    path: path.resolve('..', 'AHJ-hw.-11-RxJs.-2-Posts-with-comments.-Backend', 'public'),
-    // path: path.resolve(__dirname, 'dist'),
-    filename: addHash('[name].js', buildMode),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader, 'css-loader',
-        ],
-      },
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: addHash('[name].css', buildMode),
-      chunkFilename: addHash('[id].css', buildMode),
-    }),
-  ],
+	entry: './src/index.js',
+	output: {
+		path: path.resolve('..', 'AHJ-hw.-11-RxJs.-2-Posts-with-comments.-Backend', 'public'),
+		// path: path.resolve(__dirname, 'dist'),
+		filename: addHash('[name].js', buildMode),
+	},
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: ['babel-loader'],
+			},
+			{
+				test: /\.html$/,
+				use: ['html-loader'],
+			},
+			{
+				test: /\.css$/,
+				use: [
+					MiniCssExtractPlugin.loader, 'css-loader',
+				],
+			},
+		],
+	},
+	plugins: [
+		new CleanWebpackPlugin(),
+		new HtmlWebPackPlugin({
+			template: './src/index.html',
+			filename: './index.html',
+		}),
+		new MiniCssExtractPlugin({
+			filename: addHash('[name].css', buildMode),
+			chunkFilename: addHash('[id].css', buildMode),
+		}),
+	],
 });

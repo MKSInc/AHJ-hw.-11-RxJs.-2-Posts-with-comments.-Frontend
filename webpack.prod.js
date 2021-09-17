@@ -6,11 +6,11 @@ const buildMode = 'production';
 const common = require('./webpack.common')(buildMode);
 
 module.exports = merge(common, {
-  mode: buildMode,
-  optimization: {
-    minimizer: [
-      new TerserPlugin({}),
-      new OptimizeCSSAssetsPlugin({}),
-    ],
-  },
+	mode: buildMode,
+	optimization: {
+		minimizer: [
+			new TerserPlugin({}),
+			new OptimizeCSSAssetsPlugin({}),
+		],
+	},
 });

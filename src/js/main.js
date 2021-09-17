@@ -1,2 +1,6 @@
-// eslint-disable-next-line no-console
-console.log('main.js run');
+import Posts from '../components/Posts/Posts';
+
+export default function main() {
+	const posts = new Posts();
+	posts.getDataAndRefresh();
+}
